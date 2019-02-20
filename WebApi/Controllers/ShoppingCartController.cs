@@ -29,6 +29,8 @@ namespace WebApi.Controllers
 
         // GET api/shoppingcart/5
         [HttpGet("{id}")]
+        [ApiConventionMethod(typeof(DefaultApiConventions), 
+            nameof(DefaultApiConventions.Get))]
         public ActionResult<ShoppingItem> Get(Guid id)
         {
             var item = _service.GetById(id);
@@ -43,6 +45,8 @@ namespace WebApi.Controllers
 
         // POST api/shoppingcart
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
         public ActionResult Post([FromBody] ShoppingItem value)
         {
             if (!ModelState.IsValid)
