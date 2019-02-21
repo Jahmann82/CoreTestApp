@@ -12,21 +12,10 @@ namespace WebApi.Controllers
     public class ValuesController : ControllerBase
     {
         // GET api/values
-//        [HttpGet]
-//        public async Task<string> Get()
-//        {
-//            var stringAsync = await GetStringAsync();
-//
-//            return stringAsync;
-//        }
-        
-        // GET api/values
         [HttpGet]
         public ActionResult<string> Get()
         {
-            var stringAsync = GetStringAsync().Result;
-
-            return stringAsync;
+            return "values";
         }
 
         // GET api/values/5
@@ -52,28 +41,6 @@ namespace WebApi.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
-        
-        private static async Task<string> GetStringAsync()
-        {
-            using (System.Net.Http.HttpClient c = new HttpClient())
-            {
-                //await Task.Delay(3000);
-                var result = await c.GetStringAsync(new Uri("http://jahmannapi.azurewebsites.net/standings")).ConfigureAwait(false);
-                
-                return result;
-            }
-        }
-        
-        private static async Task<string> GetString2Async()
-        {
-            using (System.Net.Http.HttpClient c = new HttpClient())
-            {
-                await Task.Delay(3000);
-                var result = await c.GetStringAsync(new Uri("http://jahmannapi.azurewebsites.net/contacts"));
-
-                return result;
-            }
         }
     }
 }

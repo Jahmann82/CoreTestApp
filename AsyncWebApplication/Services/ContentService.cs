@@ -9,9 +9,9 @@ namespace AsyncWebApplication.Services
         {
             using (var httpClient = new HttpClient())
             {
-                using (var httpResonse = await httpClient.GetAsync("http://en.wikipedia.org/"))
+                using (var httpResonse = await httpClient.GetAsync("http://en.wikipedia.org/").ConfigureAwait(false))
                 {
-                    return await httpResonse.Content.ReadAsStringAsync();
+                    return await httpResonse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 }
             }
         }
