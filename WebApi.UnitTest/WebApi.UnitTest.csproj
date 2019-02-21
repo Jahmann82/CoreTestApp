@@ -18,9 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-        <HintPath>..\..\..\.nuget\packages\microsoft.aspnetcore.mvc.core\2.2.2\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
-      </Reference>
+      <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" />
     </ItemGroup>
 
 </Project>
